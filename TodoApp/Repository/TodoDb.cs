@@ -12,12 +12,12 @@ namespace TodoApp.Repository
 
             Database.EnsureCreated();
         }
-         
-        public DbSet<Todo> Todos => Set<Todo>();
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseNpgsql(connectionString);
         }
+
+        public DbSet<Todo> Todos => Set<Todo>();
     }
 }
